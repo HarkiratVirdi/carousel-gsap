@@ -1,0 +1,219 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    background-color:var(--background-color);
+    color: var(--text-color);
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* custom styles */
+a{
+    text-decoration: none;
+    color:var(--text-color);
+}
+
+p{
+    font-size: var(--default-text-size);
+}
+
+ul{
+    list-style-type: none;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    height: 7rem;
+    align-items: center;
+}
+
+.logo img{
+   
+    width: 12rem;
+    filter: grayscale(100%);
+}
+
+nav .left{
+    display: flex;
+
+}
+
+nav .right{
+    display: flex;
+}
+
+.py-3{
+    padding: 3rem 0rem;
+}
+
+header{
+    background-color: var(--header-color);
+}
+
+.header__links{
+    display: flex;
+    align-items: center;
+}
+
+.container{
+    /* overflow: hidden; */
+    max-width: 80%;
+    margin: auto;
+}
+
+
+ul li {
+    margin-left: 3rem;
+}
+
+
+.carousel{
+    height: 90vh;
+    /* overflow: auto; */
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel::before{
+    content: '';
+    background-color: black;
+    opacity: 0.2;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    position: relative;
+    top:0;
+}
+
+.carousel__slides, .slide{
+    height: 100%;
+    position: absolute;
+    top:0;
+    right: 0;
+    will-change: transform;
+  
+}
+
+.hidden{
+    opacity: 0;
+    visibility: hidden;
+    z-index: 0;
+
+}
+
+.show{
+    opacity:1;
+
+    z-index: 5;
+}
+
+.slide__img{
+    height: inherit;
+    width: inherit;
+}
+
+.slide__img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;   
+    position: relative;
+    top: 0; 
+}
+
+/* .slide__active::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 8;
+    background-color: rgba(22, 22, 22, 0.37);
+} */
+
+.slide__active{
+    position: relative;
+    top: 0;
+    z-index: 2;
+}
+
+.slide__active .slide__text{
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    left: 50%;
+    color: white;
+    z-index: 10;
+    font-size: 5rem;
+    transform:translate(-50%, -50%);
+
+}
+
+/* .slide__img::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+} */
+
+.pFixed{
+ position: fixed;
+ top:0;
+ height: 75%;
+ width:100%;
+ z-index: -2;
+
+}
+
+.slide__arrows{
+    position: absolute;
+    display: flex;
+    height: 95%;
+    width: 100%;
+    z-index: 10;
+    align-self: center;
+    justify-content: space-between;
+    align-self: center;
+}
+
+.slide__arrow{
+    z-index: 999;
+    margin: 3rem;
+    filter: invert(100%);
+    width: 5%;
+    cursor: pointer;
+}
+
+.slide__arrow--left{
+    background: url("https://img.icons8.com/ios/452/long-arrow-left.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 7rem 7rem;
+}
+
+.slide__arrow--right{
+    background: url("https://img.icons8.com/ios/452/long-arrow-left.png");
+    background-position: left center;
+    transform: rotate(180deg);
+    background-size: 7rem 7rem;
+    background-repeat: no-repeat;
+}
+
+   .slide__active .slide__text p{
+        font-size: 5rem;
+        
+    }
